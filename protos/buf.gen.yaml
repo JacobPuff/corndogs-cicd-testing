@@ -17,5 +17,5 @@ plugins:
       - require_unimplemented_servers=false  
   - name: python
     out: gen/proto/python
-  - plugin: buf.build/grpc/python:v1.62.1
+  - plugin: buf.build/grpc/python:v1.69.0
     out: gen/proto/python
