@@ -18,57 +18,57 @@ class CorndogsServiceStub(object):
                 '/corndogs.v1alpha1.CorndogsService/SubmitTask',
                 request_serializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.SubmitTaskRequest.SerializeToString,
                 response_deserializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.SubmitTaskResponse.FromString,
-                )
+                _registered_method=True)
         self.GetTaskStateByID = channel.unary_unary(
                 '/corndogs.v1alpha1.CorndogsService/GetTaskStateByID',
                 request_serializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetTaskStateByIDRequest.SerializeToString,
                 response_deserializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetTaskStateByIDResponse.FromString,
-                )
+                _registered_method=True)
         self.GetNextTask = channel.unary_unary(
                 '/corndogs.v1alpha1.CorndogsService/GetNextTask',
                 request_serializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetNextTaskRequest.SerializeToString,
                 response_deserializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetNextTaskResponse.FromString,
-                )
+                _registered_method=True)
         self.UpdateTask = channel.unary_unary(
                 '/corndogs.v1alpha1.CorndogsService/UpdateTask',
                 request_serializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.UpdateTaskRequest.SerializeToString,
                 response_deserializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.UpdateTaskResponse.FromString,
-                )
+                _registered_method=True)
         self.CompleteTask = channel.unary_unary(
                 '/corndogs.v1alpha1.CorndogsService/CompleteTask',
                 request_serializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.CompleteTaskRequest.SerializeToString,
                 response_deserializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.CompleteTaskResponse.FromString,
-                )
+                _registered_method=True)
         self.CancelTask = channel.unary_unary(
                 '/corndogs.v1alpha1.CorndogsService/CancelTask',
                 request_serializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.CancelTaskRequest.SerializeToString,
                 response_deserializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.CancelTaskResponse.FromString,
-                )
+                _registered_method=True)
         self.CleanUpTimedOut = channel.unary_unary(
                 '/corndogs.v1alpha1.CorndogsService/CleanUpTimedOut',
                 request_serializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.CleanUpTimedOutRequest.SerializeToString,
                 response_deserializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.CleanUpTimedOutResponse.FromString,
-                )
+                _registered_method=True)
         self.GetQueues = channel.unary_unary(
                 '/corndogs.v1alpha1.CorndogsService/GetQueues',
                 request_serializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueuesRequest.SerializeToString,
                 response_deserializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueuesResponse.FromString,
-                )
+                _registered_method=True)
         self.GetQueueTaskCounts = channel.unary_unary(
                 '/corndogs.v1alpha1.CorndogsService/GetQueueTaskCounts',
                 request_serializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueueTaskCountsRequest.SerializeToString,
                 response_deserializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueueTaskCountsResponse.FromString,
-                )
+                _registered_method=True)
         self.GetTaskStateCounts = channel.unary_unary(
                 '/corndogs.v1alpha1.CorndogsService/GetTaskStateCounts',
                 request_serializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetTaskStateCountsRequest.SerializeToString,
                 response_deserializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetTaskStateCountsResponse.FromString,
-                )
+                _registered_method=True)
         self.GetQueueAndStateCounts = channel.unary_unary(
                 '/corndogs.v1alpha1.CorndogsService/GetQueueAndStateCounts',
                 request_serializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueueAndStateCountsRequest.SerializeToString,
                 response_deserializer=corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueueAndStateCountsResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class CorndogsServiceServicer(object):
@@ -203,6 +203,7 @@ def add_CorndogsServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'corndogs.v1alpha1.CorndogsService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('corndogs.v1alpha1.CorndogsService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -220,11 +221,21 @@ class CorndogsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/corndogs.v1alpha1.CorndogsService/SubmitTask',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/corndogs.v1alpha1.CorndogsService/SubmitTask',
             corndogs_dot_v1alpha1_dot_corndogs__pb2.SubmitTaskRequest.SerializeToString,
             corndogs_dot_v1alpha1_dot_corndogs__pb2.SubmitTaskResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetTaskStateByID(request,
@@ -237,11 +248,21 @@ class CorndogsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/corndogs.v1alpha1.CorndogsService/GetTaskStateByID',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/corndogs.v1alpha1.CorndogsService/GetTaskStateByID',
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetTaskStateByIDRequest.SerializeToString,
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetTaskStateByIDResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetNextTask(request,
@@ -254,11 +275,21 @@ class CorndogsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/corndogs.v1alpha1.CorndogsService/GetNextTask',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/corndogs.v1alpha1.CorndogsService/GetNextTask',
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetNextTaskRequest.SerializeToString,
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetNextTaskResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def UpdateTask(request,
@@ -271,11 +302,21 @@ class CorndogsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/corndogs.v1alpha1.CorndogsService/UpdateTask',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/corndogs.v1alpha1.CorndogsService/UpdateTask',
             corndogs_dot_v1alpha1_dot_corndogs__pb2.UpdateTaskRequest.SerializeToString,
             corndogs_dot_v1alpha1_dot_corndogs__pb2.UpdateTaskResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def CompleteTask(request,
@@ -288,11 +329,21 @@ class CorndogsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/corndogs.v1alpha1.CorndogsService/CompleteTask',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/corndogs.v1alpha1.CorndogsService/CompleteTask',
             corndogs_dot_v1alpha1_dot_corndogs__pb2.CompleteTaskRequest.SerializeToString,
             corndogs_dot_v1alpha1_dot_corndogs__pb2.CompleteTaskResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def CancelTask(request,
@@ -305,11 +356,21 @@ class CorndogsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/corndogs.v1alpha1.CorndogsService/CancelTask',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/corndogs.v1alpha1.CorndogsService/CancelTask',
             corndogs_dot_v1alpha1_dot_corndogs__pb2.CancelTaskRequest.SerializeToString,
             corndogs_dot_v1alpha1_dot_corndogs__pb2.CancelTaskResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def CleanUpTimedOut(request,
@@ -322,11 +383,21 @@ class CorndogsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/corndogs.v1alpha1.CorndogsService/CleanUpTimedOut',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/corndogs.v1alpha1.CorndogsService/CleanUpTimedOut',
             corndogs_dot_v1alpha1_dot_corndogs__pb2.CleanUpTimedOutRequest.SerializeToString,
             corndogs_dot_v1alpha1_dot_corndogs__pb2.CleanUpTimedOutResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetQueues(request,
@@ -339,11 +410,21 @@ class CorndogsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/corndogs.v1alpha1.CorndogsService/GetQueues',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/corndogs.v1alpha1.CorndogsService/GetQueues',
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueuesRequest.SerializeToString,
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueuesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetQueueTaskCounts(request,
@@ -356,11 +437,21 @@ class CorndogsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/corndogs.v1alpha1.CorndogsService/GetQueueTaskCounts',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/corndogs.v1alpha1.CorndogsService/GetQueueTaskCounts',
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueueTaskCountsRequest.SerializeToString,
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueueTaskCountsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetTaskStateCounts(request,
@@ -373,11 +464,21 @@ class CorndogsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/corndogs.v1alpha1.CorndogsService/GetTaskStateCounts',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/corndogs.v1alpha1.CorndogsService/GetTaskStateCounts',
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetTaskStateCountsRequest.SerializeToString,
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetTaskStateCountsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetQueueAndStateCounts(request,
@@ -390,8 +491,18 @@ class CorndogsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/corndogs.v1alpha1.CorndogsService/GetQueueAndStateCounts',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/corndogs.v1alpha1.CorndogsService/GetQueueAndStateCounts',
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueueAndStateCountsRequest.SerializeToString,
             corndogs_dot_v1alpha1_dot_corndogs__pb2.GetQueueAndStateCountsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
