@@ -27,7 +27,7 @@ jobs:
           go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
           python3 -m pip install --upgrade pip
           python3 -m pip install grpclib protobuf
-          echo $PATH
+          find **/protoc*
 
   
       - uses: crazy-max/ghaction-dump-context@v1
