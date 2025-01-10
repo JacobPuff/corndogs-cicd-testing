@@ -35,7 +35,3 @@ jobs:
           token: ${{ secrets.GIT_RUNNER_TOKEN }}
           registry-login: false
           breaking-against: "https://github.com/${GITHUB_REPOSITORY}.git#branch=main,subdir=protos"
-      - name: test find
-        shell: bash
-        run: |
-          find /**/protoc-gen*
