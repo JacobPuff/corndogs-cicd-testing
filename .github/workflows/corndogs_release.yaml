@@ -71,10 +71,6 @@ jobs:
       - if: steps.semver-tags.outputs.new_release_published == 'true'
         uses: catalystcommunity/action-build-push-image-quay@v1
         with:
-            # The full name of the repository where the image will be pushed. Default is the
-            # GitHub repository name, ex: organization/repository.
-            # Default: ${{ github.repository }}
-          # repository: "catalystcommunity/corndogs"
           username: ${{ secrets.QUAY_USER }}
           password: ${{ secrets.QUAY_PASSWORD }}
           tag-versions: "latest,${{ steps.semver-tags.outputs.new_release_version }}"
