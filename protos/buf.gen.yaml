@@ -1,4 +1,4 @@
-version: v1 #
+version: v1
 managed:
   enabled: true
   go_package_prefix:
@@ -17,5 +17,5 @@ plugins:
       - require_unimplemented_servers=false  
   - name: python
     out: gen/proto/python
-  - name: grpclib_python
+  - name: python-grpc
     out: gen/proto/python
