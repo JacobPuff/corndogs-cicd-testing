@@ -20,7 +20,7 @@ packages = ["gen/proto/python/corndogs"]
 [[tool.uv.index]]
 name = "pypi"
 url = "https://pypi.org/simple/"
-publish-url = "https://test.pypi.org/legacy/"
+publish-url = "https://pypi.org/legacy/"
 
 [[tool.uv.index]]
 name = "testpypi"
